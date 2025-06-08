@@ -1,0 +1,22 @@
+body {
+    text-align: center;
+    font: normal 18px/1.5 Verdana, sans-serif;
+}
+.header {
+    border: 3px solid rgb(60, 194, 82);
+}
+.title {
+    border: 3px solid rgb(194, 60, 161);
+}
+.form {
+    border: 3px solid rgb(194, 60, 60);
+}
+.weather-card {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    width: 300px;
+    height: 150px;
+    border: 3px solid rgb(60, 129, 194);
+    transform: translate(-50%, -50%);
+}

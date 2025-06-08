@@ -3,14 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>WeatherApp</title>
     <link rel="stylesheet" type="text/css" href="owfont-master/css/owfont-regular.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="city" contenteditable="true">Мурманск</div>
-    <i class="weather-icon owf"></i>
-    <div class="temperature"></div>
-    <div class="weather-description"></div>
-    <script src="main.js"></script>
+    <header class="header">
+        <h1 class="title">Прогноз погоды</h1>
+        <form class="form">
+            <input class="input" type="text" placeholder="Введите название города">
+            <button>Показать</button>
+        </form>
+    </header>
+    <div class="weather-card">
+        <div class="city" contenteditable="true">Мурманск</div>
+        <i class="weather-icon owf"></i>
+        <div class="temperature"></div>
+        <div class="weather-description"></div>
+        <script src="main.js"></script>
+    </div>
 </body>
 </html>
