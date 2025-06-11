@@ -3,13 +3,62 @@ body {
     font: normal 18px/1.5 Verdana, sans-serif;
 }
 .header {
-    border: 3px solid rgb(60, 194, 82);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 30px 15px 50px;
+    background: linear-gradient(135deg, rgba(41, 38, 216, 0.71) 0%, rgba(46, 219, 229, 0.93) 100%);
 }
 .title {
-    border: 3px solid rgb(194, 60, 161);
+    font-family: var(--third-family);
+    font-weight: 400;
+    font-size: 40px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
 }
 .form {
-    border: 3px solid rgb(194, 60, 60);
+    display: flex;
+    justify-content: space-between;
+    width: 413px;
+    height: 40px;
+    background: #fff;
+    border-radius: 4px;
+    border: 0px;
+}
+.input {
+    flex-grow: 1;
+    border-radius: 4px;
+    border: 0px;
+    width: 373px;
+    height: 38px;
+
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 18px;
+    color: #000;
+}
+.button {
+    width: 119px;
+    height: 40px;
+    background: #945ef1;
+    border-radius: 4px;
+    border: 0px;
+
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+
+    border-color: #fff;
+
+    transition: background-color 0.2s ease-in;
+}
+
+.button:hover {
+    background: #8141f0;
 }
 .weather-card {
     position: fixed;
