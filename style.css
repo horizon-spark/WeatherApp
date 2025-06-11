@@ -1,4 +1,8 @@
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
     text-align: center;
     font: normal 18px/1.5 Verdana, sans-serif;
 }
@@ -6,8 +10,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    margin-top: -10px;
     padding: 30px 15px 50px;
+    width: 100%;
     background: linear-gradient(135deg, rgba(41, 38, 216, 0.71) 0%, rgba(46, 219, 229, 0.93) 100%);
 }
 .title {
@@ -16,6 +21,7 @@ body {
     font-size: 40px;
     text-align: center;
     color: #fff;
+    margin-top: 0px;
     margin-bottom: 30px;
 }
 .form {
@@ -60,7 +66,68 @@ body {
 .button:hover {
     background: #8141f0;
 }
-.weather-card {
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 360px;
+    height: 220px;
+    box-shadow: 2px 4px 8px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    border: 1px solid #fff;
+    background: #fff;
+
+}
+
+.card-city {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 26px;
+    text-align: left;
+    padding-left: 20px;
+    color: #000;
+    margin: 0px;
+}
+
+.card-value {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 56px;
+    text-align: left;
+    padding-left: 20px;
+    margin-top: -50px;
+    color: #000;
+}
+
+.card-value span {
+    font-size: 40px;
+    vertical-align: text-top;
+}
+
+.card-weather {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-weather img {
+    margin-top: -20px;
+    margin-right: 20px;
+}
+
+.card-description {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 30px;
+    text-align: left;
+    padding-left: 20px;
+    margin-top: -50px;
+    color: #000;
+}
+
+/* .weather-card {
     position: fixed;
     top: 30%;
     left: 50%;
@@ -68,4 +135,4 @@ body {
     height: 150px;
     border: 3px solid rgb(60, 129, 194);
     transform: translate(-50%, -50%);
-}
+} */
