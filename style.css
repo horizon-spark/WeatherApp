@@ -113,9 +113,12 @@ body {
     align-items: center;
 }
 
-.card-weather img {
-    margin-top: -20px;
+.card-weather-img {
+    margin-top: -10px;
     margin-right: 0px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
 }
 
 .card-description {

@@ -6,6 +6,11 @@ const header = document.querySelector(".header");
 const form = document.querySelector("#form");
 const input = document.querySelector("#inputCity");
 
+function removeCard() {
+    const prevCard = document.querySelector(".card");
+    if (prevCard) prevCard.remove();
+}
+
 form.onsubmit = async function(event) {
     // Отменяем отправку формы
     event.preventDefault();
@@ -19,13 +24,26 @@ form.onsubmit = async function(event) {
         const res = await fetch(url);
         const data = await res.json();
 
-        console.log(city);
-        console.log(data.main.temp);
-        console.log(data.weather[0].description);
+        removeCard();
 
-        // Удаляем предыдущую карточку, если она имеется
-        const prevCard = document.querySelector(".card");
-        if (prevCard) prevCard.remove();
+        console.log(data.weather[0].id);
+        
+        let conditions;
+        let weatherId = data.weather[0].id;
+        if (weatherId < 300) {
+            conditions = "lightning";
+        } else if (weatherId < 600) {
+            conditions = "sun-clouds-rain";
+        } else if (weatherId < 700) {
+            conditions = "clouds-snow";
+        } else if (weatherId === 800) {
+            conditions = "sun";
+        } else if (weatherId < 804) {
+            conditions = "sun-clouds";
+        } else {
+            conditions = "clouds";
+        }
+        let imgPath = `./img/${conditions}.png`;
 
         // Создаем разметку для карточки
         const html = `<div class = "card">
@@ -34,7 +52,7 @@ form.onsubmit = async function(event) {
             
             <div class="card-weather">
                 <div class="card-value">${Math.round(data.main.temp)}<span>℃</span></div>
-                <img src="./img/Lightning.png" alt="Weather Conditions">
+                <img class="card-weather-img" src=${imgPath} alt="Weather Conditions">
             </div>
 
             <div class="card-description">${data.weather[0].description}</div>        
@@ -45,9 +63,7 @@ form.onsubmit = async function(event) {
         header.insertAdjacentHTML("afterend", html);
 
     } catch(err) {
-        // Удаляем предыдущую карточку, если она имеется
-        const prevCard = document.querySelector(".card");
-        if (prevCard) prevCard.remove();
+        removeCard();
 
         const errorMessage = "Город не найден";
         const html = `<div class="card">${errorMessage}</div>`;
